@@ -189,6 +189,18 @@
 // }
 // console.log(findTarget([1, 2, 2, 2, 3, 3, 4, 4, 5, 6, 7], 2));
 
+// const findSame = (arr1, arr2) => {
+//   var res = [];
+//   arr1.forEach((ele) => {
+//     var index = arr2.findIndex(num => num === ele);
+//     if(index !== -1){
+//       arr2.splice(index,1);
+//       res.push(ele);
+//     }
+//   });
+//   return res;
+// }
+// console.log(findSame([1,2,3,4,4],[3,4,5,6,4]));
 var p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('Success!');
@@ -200,11 +212,12 @@ var p1 = new Promise((resolve, reject) => {
 
 p1.then(value => {
   console.log(value); // Success!
-  setTimeout(() => {
-    return value;
-  }, 500);
-}, reason => {
-  console.error(reason); // Error!
+  return new Promise((res,rej) => {
+    setTimeout(() => {
+      console.log("123");
+      res("567");
+    }, 500);
+  });
 })
 .then(v => {
   console.log(v);
