@@ -200,25 +200,55 @@
 //   });
 //   return res;
 // }
-// console.log(findSame([1,2,3,4,4],[3,4,5,6,4]));
-var p1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('Success!');
-  }, 500);
-  
-  // or
-  // reject(new Error("Error!"));
-});
 
-p1.then(value => {
-  console.log(value); // Success!
-  return new Promise((res,rej) => {
-    setTimeout(() => {
-      console.log("123");
-      res("567");
-    }, 500);
-  });
-})
-.then(v => {
-  console.log(v);
-})
+// const sameIndex = (arr2, tar) => {
+//   let left = 0;
+//   let right = arr2.length - 1;
+//   while(left <= right){
+//     let mid = Math.floor((left + right) / 2);
+//     if(arr2[mid] === tar){
+//       return mid;
+//     }else if(arr2[mid] > tar){
+//       right = mid - 1;
+//     }else if(arr2[mid] < tar){
+//       left = mid + 1;
+//     }
+//   }
+//   return -1;
+// }
+// const findSame = (arr1, arr2) => {
+//   arr2.sort((o1,o2) => {return o1 - o2});
+//   var res = [];
+//   arr1.forEach((ele) => {
+//     let index = sameIndex(arr2, ele);
+//     if(index !== -1){
+//       arr2.splice(index, 1);
+//       res.push(ele);
+//     }
+//   });
+//   return res;
+// }
+
+
+// var p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('Success!');
+//   }, 500);
+  
+//   // or
+//   // reject(new Error("Error!"));
+// });
+
+// p1.then(value => {
+//   console.log(value); // Success!
+//   return new Promise((res,rej) => {
+//     setTimeout(() => {
+//       console.log("123");
+//       res("567");
+//     }, 500);
+//   });
+// })
+// .then(v => {
+//   console.log(v);
+// })
+
