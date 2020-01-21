@@ -252,3 +252,7 @@
 //   console.log(v);
 // })
 
+const add = (x) => {
+ return (y) => {return x + y};
+}
+console.log(add(4)(6));
